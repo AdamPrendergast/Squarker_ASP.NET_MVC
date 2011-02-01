@@ -47,18 +47,24 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="nunit.core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Pages\" />
+    <Folder Include="NUnit\" />
+    <Folder Include="NUnit\Controllers\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="NUnit\Controllers\PagesControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -67,6 +73,38 @@
     <Content Include="Views\Pages\Home.aspx" />
     <Content Include="Views\Pages\Contact.aspx" />
     <Content Include="Views\Pages\About.aspx" />
+    <Content Include="Views\Shared\Site.master" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\blueprint\plugins\buttons\icons\cross.png" />
+    <Content Include="Content\blueprint\plugins\buttons\icons\key.png" />
+    <Content Include="Content\blueprint\plugins\buttons\icons\tick.png" />
+    <Content Include="Content\blueprint\plugins\buttons\screen.css" />
+    <Content Include="Content\blueprint\plugins\fancy-type\screen.css" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\doc.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\email.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\external.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\feed.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\im.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\pdf.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\visited.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\icons\xls.png" />
+    <Content Include="Content\blueprint\plugins\link-icons\screen.css" />
+    <Content Include="Content\blueprint\plugins\rtl\screen.css" />
+    <Content Include="Content\blueprint\src\forms.css" />
+    <Content Include="Content\blueprint\src\grid.css" />
+    <Content Include="Content\blueprint\src\grid.png" />
+    <Content Include="Content\blueprint\src\ie.css" />
+    <Content Include="Content\blueprint\src\print.css" />
+    <Content Include="Content\blueprint\src\reset.css" />
+    <Content Include="Content\blueprint\src\typography.css" />
+    <Content Include="Content\blueprint\ie.css" />
+    <Content Include="Content\blueprint\print.css" />
+    <Content Include="Content\blueprint\screen.css" />
+    <Content Include="Views\Shared\Stylesheets.ascx" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\rails.png" />
+    <Content Include="Views\Shared\Header.ascx" />
+    <Content Include="Views\Shared\Footer.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -77,4 +115,10 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <None Include="Content\blueprint\plugins\buttons\readme.txt" />
+    <None Include="Content\blueprint\plugins\fancy-type\readme.txt" />
+    <None Include="Content\blueprint\plugins\link-icons\readme.txt" />
+    <None Include="Content\blueprint\plugins\rtl\readme.txt" />
+  </ItemGroup>
 </Project>

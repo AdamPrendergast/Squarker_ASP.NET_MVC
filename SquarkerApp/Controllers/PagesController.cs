@@ -4,23 +4,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using System.Web.Mvc.Html;
+
 namespace SquarkerApp
 {
 	public class PagesController : Controller
 	{
 		public ActionResult Home()
 		{
-			return View();	
+			ViewData["Title"] = "Home";
+			return View("Home");	
 		}
 		
 		public ActionResult Contact()
 		{
-			return View();
+			ViewData["Title"] = "Contact";
+			return View("Contact");
 		}
 		
 		public ActionResult About()
 		{
-			return View();
+			ViewData["Title"] = "About";
+			return View("About");
 		}
 		
 	}

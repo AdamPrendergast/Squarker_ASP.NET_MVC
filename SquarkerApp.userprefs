@@ -1,20 +1,30 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Views/Pages/About.aspx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Views/Shared/Site.master">
     <Files>
-      <File FileName="SquarkerApp/Views/Pages/About.aspx" Line="9" Column="35" />
-      <File FileName="SquarkerApp/Views/Pages/Contact.aspx" Line="1" Column="1" />
-      <File FileName="SquarkerApp/Views/Pages/Home.aspx" Line="1" Column="1" />
+      <File FileName="SquarkerApp/NUnit/Controllers/PagesControllerTest.cs" Line="6" Column="27" />
+      <File FileName="SquarkerApp/Controllers/PagesController.cs" Line="7" Column="27" />
+      <File FileName="SquarkerApp/Views/Shared/Site.master" Line="15" Column="38" />
+      <File FileName="SquarkerApp/Views/Shared/Footer.ascx" Line="10" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="SquarkerApp" expanded="True">
+            <Node name="Content" expanded="True">
+              <Node name="images" expanded="True" />
+            </Node>
+            <Node name="Controllers" expanded="True" />
+            <Node name="NUnit" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
             <Node name="Views" expanded="True">
-              <Node name="Pages" expanded="True">
-                <Node name="About.aspx" selected="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Shared" expanded="True">
+                <Node name="Site.master" selected="True" />
               </Node>
             </Node>
+            <Node name="Global.asax" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -28,7 +38,7 @@
         <State selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State selected="True" />
+        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

@@ -1,11 +1,7 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-	<title></title>
-</head>
-<body>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage" %>
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
 	<div>
 		<h1>Pages#Home</h1>
 		<p>Find me in /Views/Pages/Home.aspx</p>
 	</div>
-</body>
+</asp:Content>
