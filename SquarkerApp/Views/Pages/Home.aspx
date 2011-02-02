@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.master" Inherits="System.Web.Mvc.ViewPage" %>
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
 	<div>
-		<h1>Pages#Home</h1>
-		<p>Find me in /Views/Pages/Home.aspx</p>
+		<h1>Squark your friends...</h1>
+		<p>...let them know about the cool things your doing... and they're not!</p>
+		<%= Html.ActionLink("Signup", "About", "Pages", null, new { @class = "signup_button round" }) %>
 	</div>
 </asp:Content>

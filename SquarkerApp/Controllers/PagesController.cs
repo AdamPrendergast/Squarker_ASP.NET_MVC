@@ -28,6 +28,11 @@ namespace SquarkerApp
 			return View("About");
 		}
 		
+		public ActionResult Help()
+		{
+			ViewData["Title"] = "Help";
+			return View("Help");
+		}
 	}
 }
 

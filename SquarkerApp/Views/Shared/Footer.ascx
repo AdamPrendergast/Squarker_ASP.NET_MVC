@@ -3,8 +3,8 @@
 <footer>
   <nav class="round">
     <ul>
-      <li><%= Html.ActionLink("About", "#") %></li>
-      <li><%= Html.ActionLink("Contact", "#") %></li>
+      <li><%= Html.ActionLink("About", "About", "Pages") %></li>
+      <li><%= Html.ActionLink("Contact", "Contact", "Pages") %></li>
     </ul>
   </nav>
 </footer>
