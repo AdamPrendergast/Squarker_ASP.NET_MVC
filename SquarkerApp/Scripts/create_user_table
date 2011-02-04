@@ -1,0 +1,12 @@
+﻿create table user
+(
+user_id serial not null primary key,
+name text,
+email text,
+);
+ 
+insert into user(name, email) values
+('Adam Prendergast','prenders82@yahoo.com'),
+('Rebecca Guest', 'rebeccaguest330@hotmail.com'),
+('Chris Mullany', 'outsidecontext@gmail.com'),
+('Scott Lowe', 'scottwithtwotees@hotmail.com');
