@@ -3,6 +3,6 @@
 	<div>
 		<h1>Squark your friends...</h1>
 		<p>...let them know about the cool things your doing... and they're not!</p>
-		<%= Html.ActionLink("Signup", "About", "Pages", null, new { @class = "signup_button round" }) %>
+		<%= Html.ActionLink("Signup", "New", "Users", null, new { @class = "signup_button round" }) %>
 	</div>
 </asp:Content>

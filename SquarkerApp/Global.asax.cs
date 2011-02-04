@@ -13,6 +13,8 @@ namespace SquarkerApp
 		{
 			routes.IgnoreRoute ("{resource}.axd/{*pathInfo}");
 			
+			routes.MapRoute (null, "Signup", new { controller = "Users", action = "New" });
+			
 			routes.MapRoute (null, "Contact", new { controller = "Pages", action = "Contact" });
 			routes.MapRoute (null, "About", new { controller = "Pages", action = "About" });
 			routes.MapRoute (null, "Help", new { controller = "Pages", action = "Help" });
