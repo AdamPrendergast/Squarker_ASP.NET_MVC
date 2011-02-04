@@ -49,6 +49,18 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="nunit.core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
     <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.LinFu, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NHibernate.ByteCode.LinFu.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.10.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Npgsql.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -125,5 +137,11 @@
     <None Include="Content\blueprint\plugins\fancy-type\readme.txt" />
     <None Include="Content\blueprint\plugins\link-icons\readme.txt" />
     <None Include="Content\blueprint\plugins\rtl\readme.txt" />
+    <None Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SquarkerDatabase.hbm.xml" />
   </ItemGroup>
 </Project>
