@@ -18,7 +18,6 @@ namespace SquarkerApp.Controllers
 		public ActionResult Index()
 		{
 			ViewData["Title"] = "Users";
-			
 			var users = DatabaseRepository.AllUsers();
 			
 			return View("Index", users);

@@ -2,13 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Models/User.cs">
     <Files>
-      <File FileName="SquarkerApp/Global.asax.cs" Line="16" Column="83" />
-      <File FileName="SquarkerApp/Controllers/UsersController.cs" Line="7" Column="1" />
-      <File FileName="SquarkerApp/Models/User.cs" Line="3" Column="22" />
-      <File FileName="SquarkerApp/Models/DatabaseRepository.cs" Line="26" Column="50" />
-      <File FileName="SquarkerApp/Views/Users/Index.aspx" Line="6" Column="17" />
-      <File FileName="SquarkerApp/hibernate.cfg.xml" Line="8" Column="119" />
-      <File FileName="SquarkerApp/SquarkerDatabase.hbm.xml" Line="14" Column="44" />
+      <File FileName="SquarkerApp/Controllers/UsersController.cs" Line="20" Column="32" />
+      <File FileName="SquarkerApp/Models/User.cs" Line="8" Column="3" />
+      <File FileName="SquarkerApp/Models/DatabaseRepository.cs" Line="27" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,6 +17,7 @@
             <Node name="Views" expanded="True">
               <Node name="Users" expanded="True" />
             </Node>
+            <Node name="Global.asax" expanded="True" />
           </Node>
         </State>
       </Pad>

@@ -11,6 +11,9 @@ namespace SquarkerApp
 {
 	public class DatabaseRepository
 	{
+		/// <summary>
+		/// NHibernate ISession setup. 
+		/// </summary>
 		public static ISession OpenSession()
 		{
 			var c = new Configuration();
@@ -20,6 +23,10 @@ namespace SquarkerApp
 			return f.OpenSession();
 		}
 		
+		
+		/// <summary>
+		/// Returns all users from database.
+		/// </summary>
 		public static IList<User> AllUsers()
 		{
 			using (ISession session = OpenSession())
