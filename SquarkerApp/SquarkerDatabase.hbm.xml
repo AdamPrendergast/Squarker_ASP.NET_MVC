@@ -13,6 +13,8 @@
     <property name="UserId" column="user_id"/>
     <property name="Name" column="user_name"/>
     <property name="Email" column="email"/>
+    <property name="CreatedAt" column="created_at"/>
+    <property name="UpdatedAt" column="updated_at"/>
      
      
   </class>

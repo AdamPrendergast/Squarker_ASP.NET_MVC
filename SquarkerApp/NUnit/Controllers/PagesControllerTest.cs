@@ -5,15 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 using NUnit.Framework;
+using SquarkerApp.Helpers;
 
 namespace SquarkerApp
 {
 	[TestFixture()]
 	public class PagesControllerTest
 	{
-		const string title = "Squarker - ";
-		
-		
 		/// <summary>
 		/// Home Action
 		/// </summary>
@@ -34,12 +32,15 @@ namespace SquarkerApp
 		[Test()]
 		public void Home_ViewResult_Should_Have_The_Right_Title ()
 		{
-			string pageTitle = title + "Home";
+			string intendedTitle = "Squarker | Home";
+			
 			var pagesController = new PagesController();
 			
 			var result = pagesController.Home() as ViewResult;
 			
-			Assert.AreEqual(pageTitle, result.ViewData["Title"], "Home page title was incorrect");
+			string actualTitle = ApplicationHelper.RenderTitle(result.ViewData);
+			
+			Assert.AreEqual(intendedTitle, actualTitle, "Home page title was incorrect");
 		}
 		
 		
@@ -63,12 +64,14 @@ namespace SquarkerApp
 		[Test()]
 		public void Contact_ViewResult_Should_Have_The_Right_Title ()
 		{
-			string pageTitle = title + "Contact";
+			string intendedTitle = "Squarker | Contact";
 			var pagesController = new PagesController();
 			
 			var result = pagesController.Contact() as ViewResult;
 			
-			Assert.AreEqual(pageTitle, result.ViewData["Title"], "Contact page title was incorrect");
+			string actualTitle = ApplicationHelper.RenderTitle(result.ViewData);
+			
+			Assert.AreEqual(intendedTitle, actualTitle, "Contact page title was incorrect");
 		}
 		
 		
@@ -92,12 +95,14 @@ namespace SquarkerApp
 		[Test()]
 		public void About_ViewResult_Should_Have_The_Right_Title ()
 		{
-			string pageTitle = title + "About";
+			string intendedTitle = "Squarker | About";
 			var pagesController = new PagesController();
 			
 			var result = pagesController.About() as ViewResult;
 			
-			Assert.AreEqual(pageTitle, result.ViewData["Title"], "About page title was incorrect");
+			string actualTitle = ApplicationHelper.RenderTitle(result.ViewData);
+			
+			Assert.AreEqual(intendedTitle, actualTitle, "About page title was incorrect");
 		}
 	}
 }

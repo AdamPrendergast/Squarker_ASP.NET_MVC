@@ -5,7 +5,6 @@ using System.Text;
 using NHibernate;
 using NHibernate.Cfg;
 using System.Reflection;
-using SquarkerApp.Models;
 
 namespace SquarkerApp
 {
@@ -23,21 +22,6 @@ namespace SquarkerApp
 			return f.OpenSession();
 		}
 		
-		
-		/// <summary>
-		/// Returns all users from database.
-		/// </summary>
-		public static IList<User> AllUsers()
-		{
-			using (ISession session = OpenSession())
-			{
-				IQuery query = session.CreateQuery("from User");
-				
-				IList<User> users = query.List<User>();
-				
-				return users;
-			}
-		}
 	}
 }
 

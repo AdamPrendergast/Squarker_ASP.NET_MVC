@@ -1,8 +1,9 @@
 <%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="SquarkerApp.Helpers" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-	<title>Squarker | <%= ViewData["Title"] %></title>
+	<title><%= ApplicationHelper.RenderTitle(ViewData) %></title>
 	<% Html.RenderPartial("Stylesheets"); %>	
 </head>
 <body>
