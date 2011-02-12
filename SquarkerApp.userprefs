@@ -1,28 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Views/Users/New.aspx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Web.config">
     <Files>
-      <File FileName="SquarkerApp/Models/User.cs" Line="7" Column="4" />
-      <File FileName="SquarkerApp/Controllers/UsersController.cs" Line="40" Column="23" />
-      <File FileName="SquarkerApp/Views/Users/New.aspx" Line="9" Column="39" />
+      <File FileName="SquarkerApp/Web.config" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="SquarkerApp" expanded="True">
+            <Node name="References" expanded="True" />
             <Node name="Controllers" expanded="True" />
-            <Node name="Helpers" expanded="True" />
-            <Node name="Models" expanded="True" />
-            <Node name="NUnit" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="Views" expanded="True">
-              <Node name="Users" expanded="True">
-                <Node name="New.aspx" selected="True" />
-              </Node>
-            </Node>
-            <Node name="Global.asax" expanded="True" />
+            <Node name="Views" expanded="True" />
+            <Node name="Web.config" selected="True" />
           </Node>
         </State>
       </Pad>

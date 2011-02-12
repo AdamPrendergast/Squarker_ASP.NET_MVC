@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SquarkerApp</RootNamespace>
     <AssemblyName>SquarkerApp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,14 +37,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.Routing">
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="nunit.core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
@@ -62,6 +57,7 @@
       <HintPath>bin\Required_Bins\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -87,6 +83,9 @@
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="NUnit\Models\UserTest.cs" />
+    <Compile Include="RestfulRouteExtensions.cs" />
+    <Compile Include="CustomHttpMethodConstraint.cs" />
+    <Compile Include="Controllers\RestfulController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -151,6 +150,7 @@
     <None Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="other_web_config.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SquarkerDatabase.hbm.xml" />

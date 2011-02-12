@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
 using SquarkerApp.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace SquarkerApp.Controllers
 {
-	public class UsersController : Controller
+	public class UsersController : RestfulController<User, int>
 	{
+		
 		/// <summary>
-		/// Index
+		/// Index User Action
 		/// </summary>
-		public ActionResult Index()
+		public override ActionResult Index()
 		{
 			ViewData["Title"] = "Users";
 			var users = UserRepository.AllUsers();
@@ -24,27 +23,9 @@ namespace SquarkerApp.Controllers
 		
 		
 		/// <summary>
-		/// New
+		/// Show User Action
 		/// </summary>
-		public ActionResult New()
-		{
-			ViewData["Title"] = "Signup";
-			
-			return View("New");
-		}
-		
-		
-		//[HttpPost]
-		public ActionResult Create()
-		{
-			return View("Index");	
-		}
-		
-		
-		/// <summary>
-		/// Show
-		/// </summary>
-		public ActionResult Show(int id)
+		public override ActionResult Show(int id)
 		{
 			try
 			{
@@ -62,6 +43,52 @@ namespace SquarkerApp.Controllers
 			}
 		}
 		
+		
+		/// <summary>
+		/// New User Action
+		/// </summary>
+		public override ActionResult New()
+		{
+			ViewData["Title"] = "Signup";
+			
+			return View("New");
+		}
+		
+		
+		/// <summary>
+		/// Create User Action
+		/// </summary>
+		public override ActionResult Create(User user)
+		{
+			return View("Index");	
+		}
+		
+		
+		/// <summary>
+		/// Edit User Action
+		/// </summary>
+		public override ActionResult Edit (int id)
+		{
+			return View();
+		}			
+
+		
+		/// <summary>
+		/// Update User Action
+		/// </summary>
+		public override ActionResult Update (User user)
+		{
+			return View();
+		}
+		
+		
+		/// <summary>
+		/// Delete User Action
+		/// </summary>
+		public override ActionResult Delete (int id)
+		{
+			return View();
+		}
 	}
 }
 

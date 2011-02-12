@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using SquarkerApp.Controllers;
 
 namespace SquarkerApp
 {
@@ -13,12 +14,13 @@ namespace SquarkerApp
 		{
 			routes.IgnoreRoute ("{resource}.axd/{*pathInfo}");
 			
-			routes.MapRoute (null, "Signup", new { controller = "Users", action = "New" });
+			routes.MapRoute (null, "signup", new { controller = "Users", action = "New" });
+			routes.MapRoute (null, "contact", new { controller = "Pages", action = "Contact" });
+			routes.MapRoute (null, "about", new { controller = "Pages", action = "About" });
+			routes.MapRoute (null, "help", new { controller = "Pages", action = "Help" });
 			
-			routes.MapRoute (null, "Contact", new { controller = "Pages", action = "Contact" });
-			routes.MapRoute (null, "About", new { controller = "Pages", action = "About" });
-			routes.MapRoute (null, "Help", new { controller = "Pages", action = "Help" });
-			
+			routes.MapResource<UsersController>("users");
+
 			routes.MapRoute ("Default", "{controller}/{action}/{id}", new { controller = "Pages", action = "Home", id = "" });
 			
 		}
@@ -27,6 +29,8 @@ namespace SquarkerApp
 		{
 			RegisterRoutes (RouteTable.Routes);
 		}
+
 	}
+	
 }
 
