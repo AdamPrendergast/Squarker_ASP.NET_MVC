@@ -4,29 +4,26 @@ namespace SquarkerApp.Controllers
 {
 	public abstract class RestfulController<TEntity, TKey> : Controller
 	{
-		// [HttpGet] Does not work. System.Web.Mvc v2.0.0.0 seems to be registered everywhere.
-		// Will continue to look into a solution. 
-		
-		[AcceptVerbs(HttpVerbs.Get)]
+		[HttpGet]
 	    public abstract ActionResult Index();
+
+	    [HttpGet]
+		public abstract ActionResult New();
 		
-		[AcceptVerbs(HttpVerbs.Get)]
-	    public abstract ActionResult New();
+	    [HttpGet]
+		public abstract ActionResult Show(TKey id);
 		
-		[AcceptVerbs(HttpVerbs.Get)]
-	    public abstract ActionResult Show(TKey id);
+	    [HttpPost]
+		public abstract ActionResult Create(TEntity entity);
 		
-	    [AcceptVerbs(HttpVerbs.Post)]
-	    public abstract ActionResult Create(TEntity entity);
+	    [HttpGet]
+		public abstract ActionResult Edit(TKey id);
 		
-		[AcceptVerbs(HttpVerbs.Get)]
-	    public abstract ActionResult Edit(TKey id);
+	    [HttpPut]
+		public abstract ActionResult Update(TEntity entity);
 		
-	    [AcceptVerbs(HttpVerbs.Put)]
-	    public abstract ActionResult Update(TEntity entity);
-		
-	   	[AcceptVerbs(HttpVerbs.Delete)]
-	    public abstract ActionResult Delete(TKey id);
+	    [HttpDelete]
+		public abstract ActionResult Delete(TKey id);
 	}
 }
 

@@ -6,11 +6,11 @@
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4D8E7C5F-0A35-4F96-BA44-13795C66C4B0}</ProjectGuid>
-    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{603C0E0B-DB56-11DC-BE95-000D561079B0};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>SquarkerApp</RootNamespace>
     <AssemblyName>SquarkerApp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -129,7 +129,6 @@
     <Content Include="Views\Pages\Help.aspx" />
     <Content Include="Views\Users\New.aspx" />
     <Content Include="Views\Users\Index.aspx" />
-    <Content Include="Views\Users\Test.aspx" />
     <Content Include="Views\Users\Show.aspx" />
     <Content Include="Views\Users\UserError.aspx" />
   </ItemGroup>

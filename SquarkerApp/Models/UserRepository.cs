@@ -34,6 +34,12 @@ namespace SquarkerApp
 				return user;
 			}
 		}
+		
+		
+		public static void AddUserToDatabase(User user)
+		{
+			
+		}
 	}
 }
 
