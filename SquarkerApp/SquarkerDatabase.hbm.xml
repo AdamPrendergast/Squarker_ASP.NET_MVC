@@ -3,19 +3,18 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="SquarkerApp" namespace="SquarkerApp" >
  
   <class name="SquarkerApp.Models.User" lazy="false" table="user_table">
+    
     <id name="UserId" column="user_id">
       <generator class="sequence">
         <param name="sequence">user_id_seq</param>
       </generator>
     </id>
- 
      
-    <property name="UserId" column="user_id"/>
     <property name="Name" column="user_name"/>
     <property name="Email" column="email"/>
+    <!-- <property name="EncryptedPassword" column="encrypted_password"/> -->
     <property name="CreatedAt" column="created_at"/>
     <property name="UpdatedAt" column="updated_at"/>
-     
      
   </class>
  

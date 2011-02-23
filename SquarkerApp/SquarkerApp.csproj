@@ -86,6 +86,7 @@
     <Compile Include="RestfulRouteExtensions.cs" />
     <Compile Include="CustomHttpMethodConstraint.cs" />
     <Compile Include="Controllers\RestfulController.cs" />
+    <Compile Include="Helpers\UserModelHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />

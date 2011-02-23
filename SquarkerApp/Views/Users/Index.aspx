@@ -3,7 +3,7 @@
 
 	<% foreach (var user in Model) { %>
 		<li>
-			<%= user.Name %>
+			<%= user.UserId %> - <%= user.Name %> - <%= user.CreatedAt %> - <%= user.UpdatedAt %>
 		</li>
 	<% } %>
 	

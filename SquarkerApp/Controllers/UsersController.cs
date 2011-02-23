@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SquarkerApp.Models;
-
+using Npgsql;
+	
 namespace SquarkerApp.Controllers
 {
 	public class UsersController : RestfulController<User, int>
@@ -60,7 +61,25 @@ namespace SquarkerApp.Controllers
 		/// </summary>
 		public override ActionResult Create(User user)
 		{
-			return View("Index");	
+			if (!ModelState.IsValid)
+			{
+				return View("New");	 
+				
+			}else
+			
+			try
+			{
+				UserRepository.AddUserToDatabase(user);
+			}
+			catch (Exception e)
+			{
+				ViewData["Title"] = "Error";
+				ViewData["Error"] = e.Message;
+				
+				return View("UserError");				
+			}
+			
+			return Redirect("users");
 		}
 		
 		

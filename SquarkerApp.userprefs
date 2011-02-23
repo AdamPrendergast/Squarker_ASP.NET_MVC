@@ -1,24 +1,25 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Views/Users/New.aspx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Controllers/UsersController.cs">
     <Files>
-      <File FileName="SquarkerApp/Views/Users/New.aspx" Line="6" Column="29" />
-      <File FileName="SquarkerApp/Views/Pages/Home.aspx" Line="1" Column="1" />
-      <File FileName="SquarkerApp/Global.asax.cs" Line="1" Column="1" />
-      <File FileName="SquarkerApp/RestfulRouteExtensions.cs" Line="1" Column="1" />
-      <File FileName="SquarkerApp/CustomHttpMethodConstraint.cs" Line="9" Column="6" />
+      <File FileName="SquarkerApp/Models/User.cs" Line="27" Column="5" />
+      <File FileName="SquarkerApp/Controllers/UsersController.cs" Line="75" Column="33" />
+      <File FileName="SquarkerApp/Models/UserRepository.cs" Line="48" Column="7" />
+      <File FileName="SquarkerApp/SquarkerDatabase.hbm.xml" Line="15" Column="78" />
+      <File FileName="SquarkerApp/Views/Users/New.aspx" Line="16" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="SquarkerApp" expanded="True">
-            <Node name="Controllers" expanded="True" />
+            <Node name="References" expanded="True" />
+            <Node name="Controllers" expanded="True">
+              <Node name="UsersController.cs" selected="True" />
+            </Node>
             <Node name="Helpers" expanded="True" />
+            <Node name="Models" expanded="True" />
             <Node name="Views" expanded="True">
-              <Node name="Pages" expanded="True" />
-              <Node name="Users" expanded="True">
-                <Node name="New.aspx" selected="True" />
-              </Node>
+              <Node name="Users" expanded="True" />
             </Node>
             <Node name="Global.asax" expanded="True" />
           </Node>

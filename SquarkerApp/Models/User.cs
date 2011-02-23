@@ -5,24 +5,45 @@ namespace SquarkerApp.Models
 {	
 	public class User
 	{	
+		
 		/// <summary>
 		/// Properties
 		/// </summary>
+		
 		public int UserId   { get; set; }
 		
-		[Required(ErrorMessage = "Username is required.")]
+		[Required(ErrorMessage = "A username is required.")]
 		[StringLength(50, ErrorMessage = "Username is too long")]
-		// Unique
 		public string Name  { get; set; }
 		
-		[Required(ErrorMessage = "A valid email is required.")]
-		// Regex
-		// Unique
+		[Required(ErrorMessage = "An email address is required.")]
+		//RegularExpressionAttribute not yet implemented by Mono.
 		public string Email { get; set; }
 		
-		// Timestamps
+		//[Required(ErrorMessage = "A password is required")]
+		//public string Password { get; set; }
+		
+		//[Required(ErrorMessage = "A password confirmation is required")]
+		//public string PasswordConfirmation { get; set; }
+		
+		//public string EncryptedPassword;
+		
 		public DateTime CreatedAt { get; set;}
 		public DateTime UpdatedAt { get; set;}
+		
+		
+		/// <summary>
+		/// Methods
+		/// </summary>
+		
+		public string EncryptPassword(string password)
+		{
+			// Encryption logic.
+			
+			return password;
+		}
+		
+
 	}
 }
 

@@ -38,7 +38,29 @@ namespace SquarkerApp
 		
 		public static void AddUserToDatabase(User user)
 		{
-			
+			using (ISession session = DatabaseRepository.OpenSession())
+			{
+				ITransaction transaction = session.BeginTransaction();
+				
+				user.CreatedAt = DateTime.Now;
+				user.UpdatedAt = DateTime.Now;
+				
+				//user.EncryptedPassword = user.EncryptPassword(user.Password);
+
+				session.Save(user);
+				
+				try
+				{
+					transaction.Commit();
+					session.Close();
+				}
+				
+				catch
+				{
+					session.Close();
+					throw new Exception("Sorry. That user is already taken.");
+				}
+			}
 		}
 	}
 }
