@@ -20,13 +20,13 @@ namespace SquarkerApp.Models
 		//RegularExpressionAttribute not yet implemented by Mono.
 		public string Email { get; set; }
 		
-		//[Required(ErrorMessage = "A password is required")]
-		//public string Password { get; set; }
+		[Required(ErrorMessage = "A password is required")]
+		public string Password { get; set; }
 		
-		//[Required(ErrorMessage = "A password confirmation is required")]
-		//public string PasswordConfirmation { get; set; }
+		[Required(ErrorMessage = "A password confirmation is required")]
+		public string PasswordConfirmation { get; set; }
 		
-		//public string EncryptedPassword;
+		public string EncryptedPassword;
 		
 		public DateTime CreatedAt { get; set;}
 		public DateTime UpdatedAt { get; set;}

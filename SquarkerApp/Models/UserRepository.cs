@@ -26,6 +26,10 @@ namespace SquarkerApp
 			}
 		}
 		
+		
+		/// <summary>
+		/// Returns a user from the database given a valid user id.
+		/// </summary>
 		public static User FindUser(int id)
 		{
 			using (ISession session = DatabaseRepository.OpenSession())
@@ -36,6 +40,9 @@ namespace SquarkerApp
 		}
 		
 		
+		/// <summary>
+		/// Adds a new user to the database.
+		/// </summary>
 		public static void AddUserToDatabase(User user)
 		{
 			using (ISession session = DatabaseRepository.OpenSession())
