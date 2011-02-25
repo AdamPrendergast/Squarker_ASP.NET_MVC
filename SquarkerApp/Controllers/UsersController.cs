@@ -71,7 +71,7 @@ namespace SquarkerApp.Controllers
 			{
 				UserRepository.AddUserToDatabase(user);
 			}
-			catch (Exception e)
+			catch (Exception e)  //Catch specific exception?
 			{
 				ViewData["Title"] = "Error";
 				ViewData["Error"] = e.Message;

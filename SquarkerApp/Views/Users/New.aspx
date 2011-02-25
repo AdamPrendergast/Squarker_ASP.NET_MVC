@@ -16,12 +16,12 @@
 		</div>
 		<div class="field">
 			<%= Html.LabelFor(model => model.Password) %><br />
-			<%= Html.TextBoxFor(model => model.Password) %>
+			<%= Html.PasswordFor(model => model.Password) %>
 			<%= Html.ValidationMessageFor(model => model.Password) %>
 		</div>
 		<div class="field">
 			<label for="PasswordConfirmation">Confirm Password</label><br />
-			<%= Html.TextBoxFor(model => model.PasswordConfirmation) %>
+			<%= Html.PasswordFor(model => model.PasswordConfirmation) %>
 			<%= Html.ValidationMessageFor(model => model.PasswordConfirmation) %>
 		</div>
 		<div class="actions">

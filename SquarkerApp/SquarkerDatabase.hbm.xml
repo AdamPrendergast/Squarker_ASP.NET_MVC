@@ -12,7 +12,8 @@
      
     <property name="Name" column="user_name"/>
     <property name="Email" column="email"/>
-    <!-- <property name="EncryptedPassword" column="encrypted_password"/> -->
+    <property name="EncryptedPassword" column="encrypted_password"/>
+    <property name="Salt" column="salt"/>
     <property name="CreatedAt" column="created_at"/>
     <property name="UpdatedAt" column="updated_at"/>
      

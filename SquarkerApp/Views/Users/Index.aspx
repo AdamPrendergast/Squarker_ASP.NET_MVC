@@ -3,7 +3,13 @@
 
 	<% foreach (var user in Model) { %>
 		<li>
-			<%= user.UserId %> - <%= user.Name %> - <%= user.CreatedAt %> - <%= user.UpdatedAt %>
+			<%= user.UserId %> - <%= user.Name %> - <%= user.CreatedAt %>
+		</li>
+		<li>
+			 Password: <%= user.EncryptedPassword %>
+		</li>
+		<li>
+			Salt: <%= user.Salt %>
 		</li>
 	<% } %>
 	

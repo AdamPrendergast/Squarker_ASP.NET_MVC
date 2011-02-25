@@ -28,7 +28,7 @@ namespace SquarkerApp
 		
 		
 		/// <summary>
-		/// Returns a user from the database given a valid user id.
+		/// Returns a User from the database given a valid UserId.
 		/// </summary>
 		public static User FindUser(int id)
 		{
@@ -37,6 +37,25 @@ namespace SquarkerApp
 				User user = session.Load<User>(id);
 				return user;
 			}
+		}
+		
+		
+		/// <summary>
+		/// Returns a User from the database given a valid Name
+		/// </summary>
+		public static User FindUser(string name)
+		{
+			using (ISession session = DatabaseRepository.OpenSession())
+			{	
+				IQuery query = session.CreateQuery("from User where Name = :name");
+				query.SetParameter("name", name);
+				
+				User user = query.UniqueResult<User>();
+				
+				session.Close();
+				
+				return user;
+			}	
 		}
 		
 		
@@ -51,9 +70,8 @@ namespace SquarkerApp
 				
 				user.CreatedAt = DateTime.Now;
 				user.UpdatedAt = DateTime.Now;
+				user.EncryptPassword();
 				
-				//user.EncryptedPassword = user.EncryptPassword(user.Password);
-
 				session.Save(user);
 				
 				try
@@ -65,10 +83,11 @@ namespace SquarkerApp
 				catch
 				{
 					session.Close();
+					// if exception is duplicate in database throw the below exception.
 					throw new Exception("Sorry. That user is already taken.");
 				}
 			}
-		}
+		} 
 	}
 }
 
