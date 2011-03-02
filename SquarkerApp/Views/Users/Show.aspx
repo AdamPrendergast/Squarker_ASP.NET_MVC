@@ -10,7 +10,8 @@
 			</td>
 			<td class="sidebar round">
 				<strong>Name</strong> <%= Model.Name %><br />
-				<strong>URL</strong>  <%= Html.ActionLink("need_url", "Show", new { controller = "Users" }, new { id = Model.UserId }) %>
+				<strong>URL</strong>  <%= Html.ActionLink(Url.Action("show", "Users", new { id = Model.UserId }),
+										  "show", "Users", new { id = Model.UserId }, null) %>
 			</td>
 		</tr>
 	</table>
