@@ -10,9 +10,9 @@ namespace SquarkerApp.Models
 	public class User
 	{	
 		
-/// <summary>
-/// Properties
-/// </summary>
+	/// <summary>
+	/// Properties
+	/// </summary>
 		
 		public int UserId   { get; set; }
 		
@@ -30,40 +30,71 @@ namespace SquarkerApp.Models
 		[Required(ErrorMessage = "A password confirmation is required")]
 		public string PasswordConfirmation { get; set; }
 		
-		public string Salt { get; set; } // make private
-		public string EncryptedPassword { get; set; } // make private
+		private string Salt { get; set; }
+		private string EncryptedPassword { get; set; }
 		
 		public DateTime CreatedAt { get; set;}
 		public DateTime UpdatedAt { get; set;}
 		
 		
-/// <summary>
-/// Methods
-/// </summary>
+	/// <summary>
+	/// Methods
+	/// </summary>
+	
 		
+		///<summary>
+		/// Verifies the encryption of a submitted password
+		/// </summary>
+		public bool HasPassword(string submittedPassword)
+		{
+			if (EncryptedPassword != Encrypt(submittedPassword))
+			    return false;
+			 return true;
+		}
+		
+		
+		/// <summary>
+		/// Encrypts the Password property of the user instance.
+		/// </summary>
 		public void EncryptPassword()
 		{
 			if (NewRecord() == true)
-			{
 				Salt = MakeSalt();
-			}
+			
 			EncryptedPassword = Encrypt(Password);
 		}
 		
 		
-/// <summary>
-/// Private Methods
-/// </summary>
+		/// <summary>
+		/// Authenticates submitted email and password attributes.
+		/// </summary>
+		public static User Authenticate(string email, string submittedPassword)
+		{
+			var user = UserRepository.FindUserByEmail(email);
+			
+			if (user == null)
+			{
+				return null;	
+				
+			}else if (user.HasPassword(submittedPassword) == true)
+			{
+				return user;
+			}
+			
+			return null;
+		}
+			
+		
+	/// <summary>
+	/// Private Methods
+	/// </summary>
 		
 		private bool NewRecord()
 		{
-			User checkUser = UserRepository.FindUser(Name);
+			User checkUser = UserRepository.FindUserByName(Name);
 			
 			if (checkUser != null)
-			{
 				return false;	
-			}
-			
 			return true;
 		}
 		

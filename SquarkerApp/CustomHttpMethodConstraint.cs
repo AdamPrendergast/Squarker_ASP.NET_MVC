@@ -20,7 +20,6 @@ namespace SquarkerApp
                 string verb = "GET";
                 if (values.ContainsKey(parameterName))
                     verb = values[parameterName].ToString();
-
                 return AllowedMethods.Any(v => 
                     v.Equals(verb, StringComparison.OrdinalIgnoreCase));                    
             }

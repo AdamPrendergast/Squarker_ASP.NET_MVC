@@ -34,7 +34,7 @@ namespace SquarkerApp
 		{
 			using (ISession session = DatabaseRepository.OpenSession())
 			{	
-				User user = session.Load<User>(id);
+				var user = session.Load<User>(id);
 				return user;
 			}
 		}
@@ -43,19 +43,35 @@ namespace SquarkerApp
 		/// <summary>
 		/// Returns a User from the database given a valid Name
 		/// </summary>
-		public static User FindUser(string name)
+		public static User FindUserByName(string name)
 		{
 			using (ISession session = DatabaseRepository.OpenSession())
 			{	
 				IQuery query = session.CreateQuery("from User where Name = :name");
 				query.SetParameter("name", name);
 				
-				User user = query.UniqueResult<User>();
+				var user = query.UniqueResult<User>();
 				
 				session.Close();
 				
 				return user;
 			}	
+		}
+		
+		
+		public static User FindUserByEmail(string email)
+		{
+			using (ISession session = DatabaseRepository.OpenSession())
+			{
+				IQuery query = session.CreateQuery("from User where Email = :email");
+				query.SetParameter("email", email);
+				
+				var user = query.UniqueResult<User>();
+				
+				session.Close();
+				
+				return user;
+			}
 		}
 		
 		

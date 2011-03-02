@@ -5,12 +5,6 @@
 		<li>
 			<%= user.UserId %> - <%= user.Name %> - <%= user.CreatedAt %>
 		</li>
-		<li>
-			 Password: <%= user.EncryptedPassword %>
-		</li>
-		<li>
-			Salt: <%= user.Salt %>
-		</li>
 	<% } %>
 	
 </asp:Content>
