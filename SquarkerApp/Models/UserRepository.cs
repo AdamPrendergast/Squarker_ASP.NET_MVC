@@ -10,6 +10,7 @@ using SquarkerApp.Models;
 namespace SquarkerApp
 {
 	public class UserRepository
+		
 	{
 		/// <summary>
 		/// Returns all users from database.
