@@ -87,6 +87,7 @@
     <Compile Include="CustomHttpMethodConstraint.cs" />
     <Compile Include="Controllers\RestfulController.cs" />
     <Compile Include="Helpers\UserModelHelper.cs" />
+    <Compile Include="Models\CustomValidations.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />

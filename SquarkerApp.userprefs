@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Views/Users/Show.aspx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Models/CustomValidations.cs">
     <Files>
-      <File FileName="SquarkerApp/Models/User.cs" Line="68" Column="3" />
-      <File FileName="SquarkerApp/Models/UserRepository.cs" Line="10" Column="22" />
-      <File FileName="SquarkerApp/Helpers/ApplicationHelper.cs" Line="33" Column="36" />
-      <File FileName="SquarkerApp/Views/Users/Show.aspx" Line="17" Column="9" />
-      <File FileName="SquarkerApp/Views/Shared/Header.ascx" Line="1" Column="1" />
+      <File FileName="SquarkerApp/Models/User.cs" Line="6" Column="22" />
+      <File FileName="SquarkerApp/Models/UserRepository.cs" Line="1" Column="1" />
+      <File FileName="SquarkerApp/Controllers/UsersController.cs" Line="62" Column="28" />
+      <File FileName="SquarkerApp/Views/Users/New.aspx" Line="7" Column="30" />
+      <File FileName="SquarkerApp/Models/CustomValidations.cs" Line="51" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,14 +15,12 @@
             <Node name="References" expanded="True" />
             <Node name="Controllers" expanded="True" />
             <Node name="Helpers" expanded="True" />
-            <Node name="Models" expanded="True" />
-            <Node name="Views" expanded="True">
-              <Node name="Shared" expanded="True" />
-              <Node name="Users" expanded="True">
-                <Node name="Show.aspx" selected="True" />
-              </Node>
+            <Node name="Models" expanded="True">
+              <Node name="CustomValidations.cs" selected="True" />
             </Node>
-            <Node name="Global.asax" expanded="True" />
+            <Node name="Views" expanded="True">
+              <Node name="Users" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

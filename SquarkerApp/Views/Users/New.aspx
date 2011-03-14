@@ -4,6 +4,7 @@
 	<h1>Signup</h1>
 	
 	<% using (Html.BeginForm("create", "Users", new { httpMethod = "POST" })) { %>
+		<%= Html.AntiForgeryToken() %>
 		<div class="field">
 			<%= Html.LabelFor(model => model.Name) %><br />
 			<%= Html.TextBoxFor(model => model.Name) %>
@@ -22,7 +23,7 @@
 		<div class="field">
 			<label for="PasswordConfirmation">Confirm Password</label><br />
 			<%= Html.PasswordFor(model => model.PasswordConfirmation) %>
-			<%= Html.ValidationMessageFor(model => model.PasswordConfirmation) %>
+			<%= Html.ValidationMessageFor(model => model) %>
 		</div>
 		<div class="actions">
 			<input type="submit" value="Create" />

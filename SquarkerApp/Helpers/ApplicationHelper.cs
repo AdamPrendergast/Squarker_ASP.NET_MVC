@@ -7,6 +7,7 @@ namespace SquarkerApp.Helpers
 {
 	public class ApplicationHelper
 	{
+		
 		/// <summary>
 		/// Renders the page title in the view.
 		/// </summary>

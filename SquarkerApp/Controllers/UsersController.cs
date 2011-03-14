@@ -59,6 +59,7 @@ namespace SquarkerApp.Controllers
 		/// <summary>
 		/// Create User Action
 		/// </summary>
+		[ValidateAntiForgeryToken]
 		public override ActionResult Create(User user)
 		{
 			if (!ModelState.IsValid)

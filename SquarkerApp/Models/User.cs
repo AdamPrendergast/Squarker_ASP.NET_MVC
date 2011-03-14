@@ -7,6 +7,7 @@ using NHibernate.Cfg;
 	
 namespace SquarkerApp.Models
 {	
+	[PropertiesMustMatch("Password", "PasswordConfirmation", ErrorMessage = "The password confirmation does not match.")]
 	public class User
 	{	
 		
@@ -18,7 +19,7 @@ namespace SquarkerApp.Models
 		
 		[Required(ErrorMessage = "A username is required.")]
 		[StringLength(50, ErrorMessage = "Username is too long")]
-		public string Name  { get; set; }
+		public string Name  { get; set;}
 		
 		[Required(ErrorMessage = "An email address is required.")]
 		//RegularExpressionAttribute not yet implemented by Mono.
@@ -28,6 +29,7 @@ namespace SquarkerApp.Models
 		public string Password { get; set; }
 		
 		[Required(ErrorMessage = "A password confirmation is required")]
+		
 		public string PasswordConfirmation { get; set; }
 		
 		private string Salt { get; set; }
@@ -89,6 +91,10 @@ namespace SquarkerApp.Models
 	/// Private Methods
 	/// </summary>
 		
+		
+		/// <summary>
+		/// Checks if this user instance has already been saved
+		/// </summary>
 		private bool NewRecord()
 		{
 			User checkUser = UserRepository.FindUserByName(Name);
@@ -98,6 +104,10 @@ namespace SquarkerApp.Models
 			return true;
 		}
 		
+		
+		/// <summary>
+		/// Creates Salt for use with password encryption
+		/// </summary>
 		private string MakeSalt()
 		{
 			string ingredients = DateTime.Now.ToString() + Password;
@@ -105,6 +115,10 @@ namespace SquarkerApp.Models
 			return SecureHash(ingredients);
 		}
 		
+		
+		/// <summary>
+		/// Sends a request to encrypt the users raw password
+		/// </summary>
 		private string Encrypt(string password)
 		{
 			string ingredients = Salt + password;
@@ -112,6 +126,10 @@ namespace SquarkerApp.Models
 			return SecureHash(ingredients);
 		}
 		
+		
+		/// <summary>
+		/// Encrypts the password and salt
+		/// </summary>
 		private string SecureHash(string ingredients)
 		{
 			MD5 md5 = new MD5CryptoServiceProvider();
