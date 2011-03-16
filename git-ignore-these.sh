@@ -1,0 +1,1 @@
+./SquarkerApp/bin
