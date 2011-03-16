@@ -7,5 +7,5 @@ obj
 *.suo
 
 #Test Results
-TestResults
+test-results
 
