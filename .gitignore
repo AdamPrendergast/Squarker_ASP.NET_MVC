@@ -1,0 +1,11 @@
+#Build Folders
+bin
+obj
+
+#User Settings
+*.user
+*.suo
+
+#Test Results
+TestResults
+
