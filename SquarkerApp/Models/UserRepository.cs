@@ -17,7 +17,7 @@ namespace SquarkerApp
 		/// </summary>
 		public static IList<User> AllUsers()
 		{
-			using (ISession session = DatabaseRepository.OpenSession())
+			using (ISession session = DatabaseManager.OpenSession())
 			{
 				IQuery query = session.CreateQuery("from User");
 				
@@ -33,7 +33,7 @@ namespace SquarkerApp
 		/// </summary>
 		public static User FindUser(int id)
 		{
-			using (ISession session = DatabaseRepository.OpenSession())
+			using (ISession session = DatabaseManager.OpenSession())
 			{	
 				var user = session.Load<User>(id);
 				return user;
@@ -46,7 +46,7 @@ namespace SquarkerApp
 		/// </summary>
 		public static User FindUserByName(string name)
 		{
-			using (ISession session = DatabaseRepository.OpenSession())
+			using (ISession session = DatabaseManager.OpenSession())
 			{	
 				IQuery query = session.CreateQuery("from User where Name = :name");
 				query.SetParameter("name", name);
@@ -62,7 +62,7 @@ namespace SquarkerApp
 		
 		public static User FindUserByEmail(string email)
 		{
-			using (ISession session = DatabaseRepository.OpenSession())
+			using (ISession session = DatabaseManager.OpenSession())
 			{
 				IQuery query = session.CreateQuery("from User where Email = :email");
 				query.SetParameter("email", email);
@@ -81,7 +81,7 @@ namespace SquarkerApp
 		/// </summary>
 		public static void AddUserToDatabase(User user)
 		{
-			using (ISession session = DatabaseRepository.OpenSession())
+			using (ISession session = DatabaseManager.OpenSession())
 			{
 				ITransaction transaction = session.BeginTransaction();
 				
