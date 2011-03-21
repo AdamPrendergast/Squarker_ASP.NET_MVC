@@ -70,6 +70,7 @@
     <Folder Include="Views\Users\" />
     <Folder Include="Helpers\" />
     <Folder Include="NUnit\Models\" />
+    <Folder Include="NHibernate\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -82,12 +83,12 @@
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="NUnit\Models\UserTest.cs" />
-    <Compile Include="RestfulRouteExtensions.cs" />
-    <Compile Include="CustomHttpMethodConstraint.cs" />
     <Compile Include="Controllers\RestfulController.cs" />
     <Compile Include="Helpers\UserModelHelper.cs" />
     <Compile Include="Models\CustomValidations.cs" />
     <Compile Include="Models\DatabaseManager.cs" />
+    <Compile Include="Helpers\RestfulRouteExtensions.cs" />
+    <Compile Include="Helpers\CustomHttpMethodConstraint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -151,12 +152,11 @@
     <None Include="Content\blueprint\plugins\fancy-type\readme.txt" />
     <None Include="Content\blueprint\plugins\link-icons\readme.txt" />
     <None Include="Content\blueprint\plugins\rtl\readme.txt" />
-    <None Include="hibernate.cfg.xml">
+    <None Include="NHibernate\hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="other_web_config.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SquarkerDatabase.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\SquarkerDatabase.hbm.xml" />
   </ItemGroup>
 </Project>
