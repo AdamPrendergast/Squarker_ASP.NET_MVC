@@ -64,12 +64,9 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Pages\" />
-    <Folder Include="NUnit\" />
-    <Folder Include="NUnit\Controllers\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="Views\Users\" />
     <Folder Include="Helpers\" />
-    <Folder Include="NUnit\Models\" />
     <Folder Include="NHibernate\" />
   </ItemGroup>
   <ItemGroup>
@@ -77,18 +74,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\PagesController.cs" />
-    <Compile Include="NUnit\Controllers\PagesControllerTest.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Helpers\ApplicationHelper.cs" />
-    <Compile Include="NUnit\Models\UserTest.cs" />
     <Compile Include="Controllers\RestfulController.cs" />
     <Compile Include="Helpers\UserModelHelper.cs" />
     <Compile Include="Models\CustomValidations.cs" />
     <Compile Include="Models\DatabaseManager.cs" />
-    <Compile Include="Helpers\RestfulRouteExtensions.cs" />
-    <Compile Include="Helpers\CustomHttpMethodConstraint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -158,5 +151,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="NHibernate\SquarkerDatabase.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SquarkerCore\SquarkerCore.csproj">
+      <Project>{0160130D-79C3-46D0-A64C-F1A3CFE77CC6}</Project>
+      <Name>SquarkerCore</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using SquarkerApp.Controllers;
+using SquarkerCore;
 
 namespace SquarkerApp
 {
@@ -20,7 +21,7 @@ namespace SquarkerApp
 			routes.MapRoute (null, "help", new { controller = "Pages", action = "Help" });
 			
 			routes.MapResource<UsersController>("users");
-
+			
 			routes.MapRoute ("Default", "{controller}/{action}/{id}", new { controller = "Pages", action = "Home", id = "" });
 			
 		}

@@ -3,16 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquarkerApp", "SquarkerApp\SquarkerApp.csproj", "{4D8E7C5F-0A35-4F96-BA44-13795C66C4B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquarkerCore", "SquarkerCore\SquarkerCore.csproj", "{0160130D-79C3-46D0-A64C-F1A3CFE77CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquarkerTests", "SquarkerTests\SquarkerTests.csproj", "{7A0E13A2-68E3-4959-B9BB-79329E3B15DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0160130D-79C3-46D0-A64C-F1A3CFE77CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0160130D-79C3-46D0-A64C-F1A3CFE77CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0160130D-79C3-46D0-A64C-F1A3CFE77CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0160130D-79C3-46D0-A64C-F1A3CFE77CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D8E7C5F-0A35-4F96-BA44-13795C66C4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D8E7C5F-0A35-4F96-BA44-13795C66C4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D8E7C5F-0A35-4F96-BA44-13795C66C4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D8E7C5F-0A35-4F96-BA44-13795C66C4B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A0E13A2-68E3-4959-B9BB-79329E3B15DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0E13A2-68E3-4959-B9BB-79329E3B15DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A0E13A2-68E3-4959-B9BB-79329E3B15DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A0E13A2-68E3-4959-B9BB-79329E3B15DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = SquarkerApp\SquarkerApp.csproj
