@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 
-namespace SquarkerApp
+namespace SquarkerApp.Controllers
 {
 	public class PagesController : Controller
 	{

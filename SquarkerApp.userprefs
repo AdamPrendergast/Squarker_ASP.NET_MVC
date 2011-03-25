@@ -1,17 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerCore/CustomHttpMethodConstraint.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SquarkerApp/Global.asax.cs">
     <Files>
-      <File FileName="SquarkerApp/Views/Users/New.aspx" Line="7" Column="33" />
-      <File FileName="SquarkerApp/Global.asax.cs" Line="7" Column="1" />
-      <File FileName="SquarkerCore/CustomHttpMethodConstraint.cs" Line="11" Column="10" />
-      <File FileName="SquarkerCore/RestfulRouteExtensions.cs" Line="4" Column="23" />
+      <File FileName="SquarkerApp/Global.asax.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="SquarkerApp" expanded="True" />
-          <Node name="SquarkerCore" expanded="True" selected="True" />
+          <Node name="SquarkerApp" expanded="True">
+            <Node name="Global.asax" expanded="True">
+              <Node name="Global.asax.cs" selected="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">

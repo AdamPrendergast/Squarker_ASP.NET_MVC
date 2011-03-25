@@ -1,16 +1,20 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using SquarkerApp.Controllers;
+using SquarkerApp.DependencyInjection;
 using SquarkerCore;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
 
 namespace SquarkerApp
 {
 	public class MvcApplication : System.Web.HttpApplication
 	{
+		
+		private static IWindsorContainer _container;
+		
 		public static void RegisterRoutes (RouteCollection routes)
 		{
 			routes.IgnoreRoute ("{resource}.axd/{*pathInfo}");
@@ -26,11 +30,28 @@ namespace SquarkerApp
 			
 		}
 
-		protected void Application_Start ()
+		protected void Application_Start()
 		{
 			RegisterRoutes (RouteTable.Routes);
+			
+			BootStrapContainer();
 		}
-
+		
+		
+		protected void Application_End()
+		{
+			_container.Dispose();	
+		}
+		
+		
+		private static void BootStrapContainer()
+		{
+			_container = new WindsorContainer().Install(FromAssembly.This());
+			
+			var controllerFactory = new WindsorControllerFactory(_container.Kernel);
+			
+			ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+		}
 	}
 	
 }
