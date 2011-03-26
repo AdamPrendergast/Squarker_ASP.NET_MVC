@@ -90,8 +90,8 @@
     <Compile Include="Helpers\UserModelHelper.cs" />
     <Compile Include="Models\CustomValidations.cs" />
     <Compile Include="Models\DatabaseManager.cs" />
-    <Compile Include="DependencyInjection\ControllersInstallers.cs" />
     <Compile Include="DependencyInjection\WindsorControllerFactory.cs" />
+    <Compile Include="DependencyInjection\ControllerInstaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
