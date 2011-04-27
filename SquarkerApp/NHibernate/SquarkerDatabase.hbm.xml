@@ -14,6 +14,7 @@
     <property name="Email" column="email"/>
     <property name="EncryptedPassword" column="encrypted_password"/>
     <property name="Salt" column="salt"/>
+    <property name="RememberToken" column="remember_token"/>
     <property name="CreatedAt" column="created_at"/>
     <property name="UpdatedAt" column="updated_at"/>
      

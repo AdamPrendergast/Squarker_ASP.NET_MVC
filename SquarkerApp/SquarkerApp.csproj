@@ -76,6 +76,7 @@
     <Folder Include="Views\Users\" />
     <Folder Include="Helpers\" />
     <Folder Include="NHibernate\" />
+    <Folder Include="Views\Sessions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -92,6 +93,8 @@
     <Compile Include="Models\DatabaseManager.cs" />
     <Compile Include="DependencyInjection\WindsorControllerFactory.cs" />
     <Compile Include="DependencyInjection\ControllerInstaller.cs" />
+    <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Models\SessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -160,6 +163,8 @@
     <None Include="NHibernate\hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Views\Sessions\New.aspx" />
+    <None Include="Views\Sessions\TestCreateView.aspx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="NHibernate\SquarkerDatabase.hbm.xml" />

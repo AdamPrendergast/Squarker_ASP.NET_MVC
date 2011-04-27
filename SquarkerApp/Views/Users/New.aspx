@@ -3,7 +3,7 @@
 
 	<h1>Signup</h1>
 	
-	<% using (Html.BeginForm("create", "Users", new { httpMethod = "POST" })) { %>
+	<% using (Html.BeginForm("Create", "Users", new { httpMethod = "POST" })) { %>
 		<%= Html.AntiForgeryToken() %>
 		<div class="field">
 			<%= Html.LabelFor(model => model.Name) %><br />

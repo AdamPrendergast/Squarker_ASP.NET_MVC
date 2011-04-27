@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SquarkerApp.Models;
-using Npgsql;
+using SquarkerApp.Sessions;
 	
 namespace SquarkerApp.Controllers
 {
@@ -80,7 +79,8 @@ namespace SquarkerApp.Controllers
 				return View("UserError");				
 			}
 			
-			return Redirect("users");
+			SessionManager.SignIn(user);
+			return RedirectToAction("Show", new { id = user.UserId });
 		}
 		
 		

@@ -29,20 +29,30 @@ namespace SquarkerApp.Models
 		public string Password { get; set; }
 		
 		[Required(ErrorMessage = "A password confirmation is required")]
-		
 		public string PasswordConfirmation { get; set; }
 		
 		private string Salt { get; set; }
 		private string EncryptedPassword { get; set; }
 		
+		public string RememberToken { get; set; }
+		
 		public DateTime CreatedAt { get; set;}
 		public DateTime UpdatedAt { get; set;}
 		
 		
-	/// <summary>
-	/// Methods
-	/// </summary>
+	// METHODS
 	
+		/// <summary>
+		/// Sets the RememberToken when a user signs in.
+		/// </summary>
+		public string RememberMe()
+		{
+			RememberToken = Encrypt(UserId + DateTime.UtcNow.ToString());
+			
+			UserRepository.UpdateUserRememberToken(this, RememberToken);
+			
+			return RememberToken;
+		}
 		
 		///<summary>
 		/// Verifies the encryption of a submitted password
@@ -72,24 +82,27 @@ namespace SquarkerApp.Models
 		/// </summary>
 		public static User Authenticate(string email, string submittedPassword)
 		{
-			var user = UserRepository.FindUserByEmail(email);
+			User userToAuthenticate = UserRepository.FindUserByEmail(email);
 			
-			if (user == null)
+			if (userToAuthenticate == null)
 			{
-				return null;	
-				
-			}else if (user.HasPassword(submittedPassword) == true)
-			{
-				return user;
+				return null;
 			}
-			
-			return null;
+			else
+			{
+				if (userToAuthenticate.HasPassword(submittedPassword) == true)
+				{
+					return userToAuthenticate;
+				}
+				else
+				{
+					return null;	
+				}
+			}
 		}
 			
 		
-	/// <summary>
-	/// Private Methods
-	/// </summary>
+	// PRIVATE METHODS
 		
 		
 		/// <summary>
@@ -117,11 +130,11 @@ namespace SquarkerApp.Models
 		
 		
 		/// <summary>
-		/// Sends a request to encrypt the users raw password
+		/// Encrypts a given striung with User.Salt
 		/// </summary>
-		private string Encrypt(string password)
+		private string Encrypt(string s)
 		{
-			string ingredients = Salt + password;
+			string ingredients = Salt + s;
 			
 			return SecureHash(ingredients);
 		}

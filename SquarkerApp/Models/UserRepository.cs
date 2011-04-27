@@ -60,6 +60,9 @@ namespace SquarkerApp
 		}
 		
 		
+		/// <summary>
+		/// Returns a User from the database given a valid Email
+		/// </summary>
 		public static User FindUserByEmail(string email)
 		{
 			using (ISession session = DatabaseManager.OpenSession())
@@ -67,11 +70,46 @@ namespace SquarkerApp
 				IQuery query = session.CreateQuery("from User where Email = :email");
 				query.SetParameter("email", email);
 				
-				var user = query.UniqueResult<User>();
+				try
+				{
+					var user = query.UniqueResult<User>();
+					return user;
+				}
+				catch
+				{
+					return null;	
+				}
+				finally
+				{
+					session.Close();		
+				}					
+			}
+		}
+		
+		
+		/// <summary>
+		/// Returns a User from the database given a valid RememberToken
+		/// </summary>
+		public static User FindUserByRememberToken(string token)
+		{
+			using (ISession session = DatabaseManager.OpenSession())
+			{
+				IQuery query = session.CreateQuery("from User where RememberToken = :token");
+				query.SetParameter("token", token);
 				
-				session.Close();
-				
-				return user;
+				try
+				{
+					var user = query.UniqueResult<User>();
+					return user;
+				}
+				catch
+				{
+					return null;	
+				}
+				finally
+				{
+					session.Close();
+				}
 			}
 		}
 		
@@ -104,7 +142,29 @@ namespace SquarkerApp
 					throw new Exception("Sorry. That user is already taken.");
 				}
 			}
-		} 
+		}
+		
+		
+		/// <summary>
+		/// Updates the user RememberToken in the database with a new given value
+		/// </summary>
+		public static void UpdateUserRememberToken(User user, string RememberToken)
+		{
+			// Find user in database
+			// update RememberToken
+			using (ISession session = DatabaseManager.OpenSession()) 
+			{
+                ITransaction transaction = session.BeginTransaction();
+				
+                IQuery query = session.CreateQuery("from User where UserId = :id");
+				query.SetParameter("id", user.UserId); //ToString()?
+				
+                User userToUpdate = query.List<User>()[0];
+                userToUpdate.RememberToken = RememberToken;
+                transaction.Commit();
+
+            }
+		}
 	}
 }
 
